@@ -1,0 +1,50 @@
+#A. Anton and Letters
+
+#time limit per test2 seconds
+#memory limit per test256 megabytes
+
+#Recently, Anton has found a set. 
+#The set consists of small English letters. Anton carefully wrote out all the letters from the set in one line, separated by a comma. 
+#He also added an opening curved bracket at the beginning of the line and a closing curved bracket at the end of the line.
+
+#Unfortunately, from time to time Anton would forget writing some letter and write it again. 
+# He asks you to count the total number of distinct letters in his set.
+
+#Input
+#The first and the single line contains the set of letters. The length of the line doesn't exceed 1000. 
+# It is guaranteed that the line starts from an opening curved bracket and ends with a closing curved bracket. 
+# Between them, small English letters are listed, separated by a comma. Each comma is followed by a space.
+
+#Output
+#Print a single number — the number of distinct letters in Anton's set.
+
+#Examples
+#{a, b, c}
+#3
+#{b, a, b, a}
+#2
+#{}
+#0
+
+string = input("")
+
+retira_colchetes1 = string.replace("{","")
+retira_colchetes2 = retira_colchetes1.replace("}","")
+retira_espacos = retira_colchetes2.replace(" ","")
+separa = retira_espacos.split(",")
+
+lista_de_argumentos = []
+
+
+for _ in separa:
+    
+    if _ in lista_de_argumentos:
+        pass
+    else:
+        lista_de_argumentos.append(_)
+
+
+if lista_de_argumentos != ['']:
+    print(len(lista_de_argumentos))
+else:
+    print(0)
