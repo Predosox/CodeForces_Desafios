@@ -33,3 +33,5 @@ if pedir_emprestado < 0:
     print(0)
 else:
     print(pedir_emprestado)
+
+#Time: 77ms

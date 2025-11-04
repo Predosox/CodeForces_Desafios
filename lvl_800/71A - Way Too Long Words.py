@@ -43,3 +43,5 @@ for _ in range(quantia):
         print(f'{palavra[0]}{lenpalavra-2}{palavra[-1]}')
     else:
         print(palavra)
+
+#Time 62ms

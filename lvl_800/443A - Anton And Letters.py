@@ -48,3 +48,5 @@ if lista_de_argumentos != ['']:
     print(len(lista_de_argumentos))
 else:
     print(0)
+
+#Time: 77ms
