@@ -31,6 +31,4 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add README.md
-          git commit -m "Atualiza README com dados do Codeforces"
-
-          git push https://x-access-token:${TOKEN}@github.com/${{ github.repository }} HEAD:main
+          git commit -m "Atualiza README com dados do Codeforces" || echo "Nada para comitar"
