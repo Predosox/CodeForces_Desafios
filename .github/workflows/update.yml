@@ -24,6 +24,7 @@ jobs:
       - name: Rodar script
         run: python update_readme.py
 
+      
       - name: Commit e push
         env:
           TOKEN: ${{ secrets.TOKEN_READMEAPI }}
@@ -32,3 +33,5 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add README.md
           git commit -m "Atualiza README com dados do Codeforces" || echo "Nada para comitar"
+          git push https://x-access-token:${TOKEN}@github.com/${{ github.repository }} HEAD:main
+
