@@ -25,9 +25,10 @@ jobs:
         run: python update_readme.py
 
       - name: Commit e push
+        env:
+          TOKEN: ${{ secrets.TOKEN_READMEAPI }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add README.md
           git commit -m "Atualiza README com dados do Codeforces"
-          git push
