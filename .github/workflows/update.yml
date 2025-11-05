@@ -1,0 +1,33 @@
+name: Atualizar README com dados do Codeforces
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Executa todo dia às 6h UTC
+  workflow_dispatch:      # Permite execução manual
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Rodar script
+        run: python update_readme.py
+
+      - name: Commit e push
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add README.md
+          git commit -m "Atualiza README com dados do Codeforces"
+          git push
